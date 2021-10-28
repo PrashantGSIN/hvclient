@@ -1,3 +1,4 @@
+#!/bin/bash
 hvclient -claimsubmit=h20.com
 # hvclient -trustchain
 # openssl genrsa 2048 > test.key
