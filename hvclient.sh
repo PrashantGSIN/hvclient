@@ -1,4 +1,4 @@
-hvclient -claimsubmit=example3.com
+hvclient -claimsubmit=h20.com
 # hvclient -trustchain
 # openssl genrsa 2048 > test.key
 # hvclient -privatekey test.key -commonname Demo_cert -csrout > csr.pem
