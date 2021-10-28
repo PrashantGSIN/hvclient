@@ -1,5 +1,5 @@
 #!/bin/bash
-hvclient -claimsubmit=example.com.com
+hvclient -claimsubmit=example1.com.com
 # hvclient -trustchain
 # openssl genrsa 2048 > test.key
 # hvclient -privatekey test.key -commonname Demo_cert -csrout > csr.pem
