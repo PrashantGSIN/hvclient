@@ -1,6 +1,5 @@
 #!/bin/bash
 # hvclient -claimsubmit=exam.com
-# hvclient -generate -publickey="testdata/rsa_pub.key"
 # hvclient -generate -duration="30d" -privatekey="testdata/rsa_priv.key"
 # hvclient -generate -notbefore="2021-10-19T14:30:00IST" -notafter="2021-10-29T18:00:00IST" -csr="testdata/request.p10"
 # hvclient -generate -notbefore="2021-10-18T14:30:00IST" -duration="90d" -privatekey="testdata/ec_priv.key" -gencsr
@@ -11,8 +10,6 @@
 # hvclient -claimdns="3AEA9E9966E8774203A20C574B4C5C5D"
 # hvclient -commonname Demo_cert -dnsnames example.com -csr csr.pem > cert1.pem
 # cat cert.pem
-
-#!/bin/bash
 
 # Look for argument, if not set use default
 if [[ $1 -eq 0 ]]; then
@@ -32,3 +29,8 @@ echo "Token to put into DNS: ${token}"
 echo "The claimID: ${claim_id}"
 
 hvclient -claimdns="${claim_id}"
+hvclient -generate -publickey="testdata/rsa_pub.key"
+hvclient -generate -duration="30d" -privatekey="testdata/rsa_priv.key"
+hvclient -generate -notbefore="2021-11-10T14:30:00IST" -notafter="2021-11-10T18:00:00IST" -csr="testdata/request.p10"
+hvclient -generate -notbefore="2021-11-10T14:30:00IST" -duration="90d" -privatekey="testdata/ec_priv.key" -gencsr
+openssl genrsa 2048 > test1.key
