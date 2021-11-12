@@ -1,5 +1,5 @@
 #!/bin/bash
-# hvclient -claimsubmit=exam.com
+hvclient -claimsubmit=exam.com
 # hvclient -generate -duration="30d" -privatekey="testdata/rsa_priv.key"
 # hvclient -generate -notbefore="2021-10-19T14:30:00IST" -notafter="2021-10-29T18:00:00IST" -csr="testdata/request.p10"
 # hvclient -generate -notbefore="2021-10-18T14:30:00IST" -duration="90d" -privatekey="testdata/ec_priv.key" -gencsr
@@ -12,21 +12,21 @@
 # cat cert.pem
 
 # Look for argument, if not set use default
-if [[ $1 -eq 0 ]]; then
+#if [[ $1 -eq 0 ]]; then
     domain="exam.com"
-else
-    domain="${1}"
-fi
+#else
+#    domain="${1}"
+#fi
 
-echo "Creating certificate for ${domain}"
+#echo "Creating certificate for ${domain}"
 
-hvclientoutput=`hvclient -claimsubmit=${domain}`
+#hvclientoutput=`hvclient -claimsubmit=${domain}`
 
-token=$(echo $hvclientoutput | awk 'BEGIN { FS = "," } ; { print $1 }' | awk 'BEGIN { FS = "=" } ; { print $2 }')
-claim_id=$(echo $hvclientoutput | awk 'BEGIN { FS = "," } ; { print $3 }')
+#token=$(echo $hvclientoutput | awk 'BEGIN { FS = "," } ; { print $1 }' | awk 'BEGIN { FS = "=" } ; { print $2 }')
+#claim_id=$(echo $hvclientoutput | awk 'BEGIN { FS = "," } ; { print $3 }')
 
-echo "Token to put into DNS: ${token}"
-echo "The claimID: ${claim_id}"
+#echo "Token to put into DNS: ${token}"
+#echo "The claimID: ${claim_id}"
 
 hvclient -claimdns="${claim_id}"
 hvclient -generate -publickey="testdata/rsa_pub.key"
