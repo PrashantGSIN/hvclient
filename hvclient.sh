@@ -1,5 +1,5 @@
 #!/bin/bash
-hvclient -claimsubmit=exam.com
+hvclient -claimsubmit=exm.com
 # hvclient -generate -duration="30d" -privatekey="testdata/rsa_priv.key"
 # hvclient -generate -notbefore="2021-10-19T14:30:00IST" -notafter="2021-10-29T18:00:00IST" -csr="testdata/request.p10"
 # hvclient -generate -notbefore="2021-10-18T14:30:00IST" -duration="90d" -privatekey="testdata/ec_priv.key" -gencsr
