@@ -13,7 +13,7 @@ hvclient -claimsubmit=exm.com
 
 # Look for argument, if not set use default
 if [[ $1 -eq 0 ]]; then
-    domain="exam.com"
+    domain="exm.com"
 else
     domain="${1}"
 fi
