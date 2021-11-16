@@ -11,6 +11,7 @@ hvclient -claimsubmit=exam.com
 # hvclient -commonname Demo_cert -dnsnames example.com -csr csr.pem > cert1.pem
 # cat cert.pem
 
+#!/bin/bash
 # Look for argument, if not set use default
 if [[ $1 -eq 0 ]]; then
     domain="exam.com"
